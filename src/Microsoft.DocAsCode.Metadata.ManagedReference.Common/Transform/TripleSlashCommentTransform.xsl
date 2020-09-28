@@ -148,24 +148,32 @@
           <xsl:if test="listheader">
             <thead>
               <tr>
+                <xsl:for-each select="listheader/term">
                 <th>
-                  <xsl:apply-templates select="listheader/term" />
+                  <xsl:apply-templates />
                 </th>
+                </xsl:for-each>
+                <xsl:for-each select="listheader/description">
                 <th>
-                  <xsl:apply-templates select="listheader/description" />
+                  <xsl:apply-templates />
                 </th>
+                </xsl:for-each>
               </tr>
             </thead>
           </xsl:if>
           <tbody>
             <xsl:for-each select="item">
               <tr>
+                <xsl:for-each select="term">
                 <td>
-                  <xsl:apply-templates select="term"/>
+                  <xsl:apply-templates />
                 </td>
+                </xsl:for-each>
+                <xsl:for-each select="description">
                 <td>
-                  <xsl:apply-templates select="description"/>
+                  <xsl:apply-templates />
                 </td>
+                </xsl:for-each>
               </tr>
             </xsl:for-each>
           </tbody>
